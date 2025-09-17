@@ -1,0 +1,52 @@
+[project]
+name = "helm-chart-mcp"
+version = "0.1.0"
+description = "MCP server for analyzing Helm chart dependencies and providing schema information"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Mario Schober", email = "your.email@example.com"}
+]
+keywords = ["mcp", "helm", "chart", "dependencies", "kubernetes"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "pyyaml>=6.0",
+    "jinja2>=3.0.0",
+    "jsonschema>=4.0.0",
+    "aiohttp>=3.8.0",
+    "aiofiles>=23.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/helm-chart-mcp"
+Repository = "https://github.com/yourusername/helm-chart-mcp"
+Issues = "https://github.com/yourusername/helm-chart-mcp/issues"
+
+[project.scripts]
+helm-chart-mcp = "helm_chart_mcp.server:cli_main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/helm_chart_mcp"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.0",
+]

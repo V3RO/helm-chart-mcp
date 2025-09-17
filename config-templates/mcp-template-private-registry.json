@@ -1,0 +1,19 @@
+{
+  "servers": {
+    "helm-chart-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "HELM_OCI_REGISTRY={{ registry }}",
+        "-e",
+        "HELM_OCI_USERNAME={{ username }}",
+        "-e",
+        "HELM_OCI_PASSWORD={{ password }}",
+        "helm-chart-mcp:latest"
+      ]
+    }
+  }
+}

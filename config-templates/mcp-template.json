@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "helm-chart-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "helm-chart-mcp:latest"
+      ]
+    }
+  }
+}
